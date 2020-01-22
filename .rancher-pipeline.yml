@@ -5,3 +5,7 @@ stages:
           dockerFilePath: ./Dockerfile
           buildContext: .
           tag: example-ci:${CICD_EXECUTION_SEQUENCE}
+  - name: Deploy
+    steps:
+      - applyYamlConfig:
+          path: ./deployment.yaml
