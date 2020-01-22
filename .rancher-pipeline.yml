@@ -1,0 +1,7 @@
+stages:
+  - name: Publish
+    steps:
+      - publishImageConfig:
+          dockerFilePath: ./Dockerfile
+          buildContext: .
+          tag: example-ci:${CICD_EXECUTION_SEQUENCE}
